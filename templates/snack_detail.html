@@ -1,0 +1,16 @@
+
+{% extends 'base.html' %} 
+
+{% block content %}
+<div class="card" style="width:fit-content;padding-left: 20px;padding-top: 20px;">
+    <div class="card-header">
+        <h2 style="text-align: center;">{{snack.title}}</h2>
+    </div>
+    <div class="container">
+        <p style="font-size: large;font-style: italic ;">Purchaser: {{snack.purchaser}}</p>
+        <p>Description: {{snack.description}}</p>
+        <button type="button" style="padding: 5px;"><a href="{% url 'snack_update' snack.pk %}">Update Snack</a></button>
+        <button type="button" style="padding: 5px;"><a href="{% url 'snack_delete' snack.pk %}">Delete Snack</a></button>
+    </div>
+</div>
+{% endblock content %}

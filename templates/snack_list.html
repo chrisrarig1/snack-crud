@@ -1,0 +1,10 @@
+{% extends 'base.html' %} 
+
+{% block content %}
+
+{% for snack in snacks %}
+<ul style="padding-left: 75px;padding-top: 20px;font-size:larger;">
+<li><a href="{% url 'snack_detail' snack.pk %}" style="font-size: larger; color: black;">{{snack.title}}</a></li>
+</ul> 
+{% endfor %} 
+{% endblock content %}
