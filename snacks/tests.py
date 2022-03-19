@@ -15,7 +15,7 @@ class SnackTests(TestCase):
         )
 
     def test_string_representation(self):
-        self.assertEqual(str(self.snacks), "skittles")
+        self.assertEqual(str(self.snack.title), "skittles")
 
     def test_snack_content(self):
         self.assertEqual(f"{self.snack.title}", "skittles")
@@ -33,7 +33,7 @@ class SnackTests(TestCase):
         no_response = self.client.get("/100000/")
         self.assertEqual(response.status_code, 200)
         self.assertEqual(no_response.status_code, 404)
-        self.assertContains(response, "Owner: tester")
+        self.assertContains(response, "Purchaser: tester")
         self.assertTemplateUsed(response, "snack_detail.html")
 
     def test_snack_create_view(self):
